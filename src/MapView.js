@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 
-import {googleKey} from "./config"
 import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps"
 
 
@@ -20,7 +19,7 @@ const MyMapComponent = withScriptjs(withGoogleMap((mapProps) =>
 
 export default class MapView extends Component{
     render(){
-        let googleUrl = "https://maps.googleapis.com/maps/api/js?key=" + googleKey + "&v=3.exp&libraries=geometry,drawing,places";
+        let googleUrl = "https://maps.googleapis.com/maps/api/js?key=" + process.env.REACT_APP_GOOGLE_KEY + "&v=3.exp&libraries=geometry,drawing,places";
 
         return <MyMapComponent
             googleMapURL={googleUrl}

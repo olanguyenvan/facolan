@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 
-import {facebookKey} from "./config"
 import graph from "fb-react-sdk";
 
 
@@ -10,7 +9,7 @@ export default class FacebookSearcher extends Component{
         this.state = {
             inputFieldValue: "",
         };
-        graph.setAccessToken(facebookKey);
+        graph.setAccessToken(process.env.REACT_APP_FACEBOOK_KEY);
         this.updateInputValue = this.updateInputValue.bind(this);
         this.getResults = this.getResults.bind(this);
     }
