@@ -20,6 +20,9 @@ class App extends Component {
     render() {
         return (
             <div className="App">
+                <br/>
+                <img src="https://image.ibb.co/e7oRLy/33899692_1939751936094778_51910319064219648_n.png" height="100"/>
+                <br/> <br/>
                 <FacebookSearcher
                     setMapResults={this.setMapResults}
                 />
