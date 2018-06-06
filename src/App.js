@@ -11,10 +11,15 @@ class App extends Component {
             mapResults: []
         };
         this.setMapResults = this.setMapResults.bind(this);
+        this.cokolwiek = this.cokolwiek.bind(this);
     }
 
     setMapResults(newMapResults){
         this.setState({mapResults: newMapResults})
+    }
+
+    cokolwiek(){
+        console.log("Cokolwiek")
     }
 
     render() {
