@@ -5,7 +5,7 @@ import AutoClosingMarker from "./AutoClosingMarker";
 
 const MyMapComponent = withScriptjs(withGoogleMap((mapProps) =>
     <GoogleMap
-        defaultZoom={8}
+        defaultZoom={7}
         defaultCenter={{ lat: 50.692241, lng: 21.717988 }}
     >
         {mapProps.markerLocationsData.map(
@@ -44,7 +44,7 @@ export default class MapView extends Component{
             googleMapURL={googleUrl}
             loadingElement={<div style={{ height: `100%` }} />}
             containerElement={<div style={{ height: `400px` }} />}
-            mapElement={<div style={{ height: `100%` }} />}
+            mapElement={<div style={{ height: `160%` }} />}
             markerLocationsData={this.state.markers}
         />
     }
