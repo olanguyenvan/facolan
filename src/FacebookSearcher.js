@@ -21,15 +21,20 @@ export default class FacebookSearcher extends Component{
 
     handleKeyPress(target) {
         if(target.charCode==13){
-            console.log("enter");
             this.getResults();
         }
     }
 
     getResults(){
-        const search = "search?q=" + this.state.inputFieldValue + "&type=place&fields=name,location";
-        graph.get(search, function (err, res) {
+        const params = {
+            fields: "name,location,id",
+            type: "place",
+            q: this.state.inputFieldValue
+        };
+        const searchQuery = "search";
+        graph.get(searchQuery, params, function (err, res) {
             let locationsData = res.data.map( result => {return {
+                    id: result.id,
                     name: result.name,
                     longitude: result.location.longitude,
                     latitude: result.location.latitude,

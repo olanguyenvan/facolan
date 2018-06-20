@@ -10,7 +10,7 @@ const MyMapComponent = withScriptjs(withGoogleMap((mapProps) =>
     >
         {mapProps.markerLocationsData.map(
             markerLocationData => <AutoClosingMarker
-                key={markerLocationData.name}
+                key={markerLocationData.id}
                 locationName={markerLocationData.name}
                 position={{lat: markerLocationData.latitude, lng: markerLocationData.longitude}}
                 />
@@ -31,9 +31,7 @@ export default class MapView extends Component{
     }
 
     componentWillReceiveProps(newProps){
-        this.setState({markers: newProps.markerLocationsData}, () => {
-            this.state.markers.map(marker => marker.isOpen = false)
-        })
+        this.setState({markers: newProps.markerLocationsData})
     }
 
 
